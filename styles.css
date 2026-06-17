@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: var(--text);
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+/* Prevent scrolling on the body when modal is open */
+body.no-scroll {
+    overflow: hidden;
+    /* Optional: prevents layout shift if you want to be extra safe */
+    height: 100vh; 
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--bg);
+    border: 1px solid;
+    border-color: var(--gray-1);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.event-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--primary); /* Usando variable de color principal */
+    color: var(--text);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+select {
+    border-radius: 6px;
+    border: 1px solid;
+    border-color: var(--gray-1);
+}
+
+th,
+td {
+    border: 1px solid;
+    border-color: var(--gray-1);
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--secondary); /* Usando variable secundaria para encabezados */
+}
+
+.hidden {
+    display: none;
+}
+
+.tool-box {
+    background: var(--bg); /* Cambiado de white a la variable de fondo */
+    border: 1px solid;
+    border-color: var(--gray-1);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    margin-top: 0;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.info {
+    color: var(--text-muted); /* Cambiado de #555 a la variable de texto atenuado */
+}
+
+pre {
+    background-color: var(--bg);
+}

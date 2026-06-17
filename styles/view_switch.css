@@ -1,0 +1,53 @@
+.view-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.view-switch-input {
+    display: none;
+}
+
+.view-switch-slider {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    background: var(--gray-1);
+    border-radius: 999px;
+    transition: background 0.25s ease;
+}
+
+.view-switch-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 3px;
+    left: 3px;
+    background: white; /* Se mantiene blanco como es un elemento de diseño interno */
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estado activo del interruptor */
+.view-switch-input:checked+.view-switch-slider {
+    background: var(--primary); /* Cambiado de #1976d2 a var(--primary) */
+}
+
+.view-switch-input:checked+.view-switch-slider::before {
+    transform: translateX(24px);
+}
+
+.view-switch-label {
+    font-weight: bold;
+    color: var(--text);
+}

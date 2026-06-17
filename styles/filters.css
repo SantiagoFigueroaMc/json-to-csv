@@ -1,0 +1,99 @@
+.filter-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filters-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.filters-box {
+    background: var(--bg); /* Cambiado de white a var(--bg) */
+    border: 1px solid;
+    border-color: var(--gray-1);
+    border-radius: 8px;
+    padding: 16px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#filters-search {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    border-color: var(--gray-1);
+}
+
+.drop-zone {
+    min-height: 120px;
+    max-height: 200px;
+    overflow: auto;
+    border: 2px dashed;
+    border-color: var(--gray-1);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+}
+
+.filter-chip {
+    background: var(--primary); /* Cambiado de #1976d2 a var(--primary) */
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 16px;
+    cursor: grab;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-chip.dragging {
+    opacity: 0.5;
+}
+
+.filter-chip button {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.filter-select-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg); /* Cambiado de #f4f4f4 a var(--bg) */
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.filter-select-wrapper label {
+    font-weight: bold;
+}
+
+.filter-select-wrapper select {
+    min-width: 140px;
+}

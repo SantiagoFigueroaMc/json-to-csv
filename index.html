@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Events Viewer</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/acordion.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <link rel="stylesheet" href="styles/dropdown.css">
+    <link rel="stylesheet" href="styles/file_explorer.css">
+    <link rel="stylesheet" href="styles/dialog.css">
+    <link rel="stylesheet" href="styles/pre_and_table.css">
+    <link rel="stylesheet" href="styles/filters.css">
+    <link rel="stylesheet" href="styles/view_switch.css">
+</head>
+
+<body>
+
+    <aside>
+        <input type="file" accept=".json" id="upload-file">
+
+        <input type="search" id="search-files" placeholder="Buscar archivo...">
+        <ul class="file-explorer">
+        </ul>
+
+    </aside>
+    <main>
+        <header>
+            <h1>JSON Events Viewer</h1>
+            <p id="parseStatus"></p>
+            <button id="themeToggle">Switch Theme</button>
+        </header>
+
+        <div class="toolbar">
+
+            <!-- FILTERS UI -->
+
+            <div class="filters-layout">
+
+                <div class="filters-box">
+                    <h3>Available Filters</h3>
+
+                    <input type="search" id="filters-search" placeholder="Buscar filtro...">
+
+                    <div id="availableFilters" class="drop-zone available-zone">
+                        <!-- draggable keys -->
+                    </div>
+                </div>
+
+                <div class="filters-box">
+                    <h3>Used Filters</h3>
+
+                    <div id="usedFilters" class="drop-zone used-zone">
+                        Drag and Drop filters here...
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="switch-container">
+                <label class="view-switch">
+                    <input type="checkbox" id="viewSwitch" class="view-switch-input" />
+                    <span class="view-switch-slider"></span>
+                    <span class="view-switch-label">
+                        Table View
+                    </span>
+                </label>
+            </div>
+
+        </div>
+
+        <details open class="accordion">
+            <summary>Timeline</summary>
+            <div class="content">
+                <div id="timeline" class="container"></div>
+            </div>
+        </details>
+
+        <details class="accordion">
+            <summary>Eventos</summary>
+            <div class="content">
+                <div id="events" class="container"></div>
+            </div>
+        </details>
+
+    </main>
+
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modalBody">
+                <!-- The content from createEventDialog() will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/render_events.js"></script>
+    <script src="scripts/parse_file.js"></script>
+    <script src="scripts/timeline.js"></script>
+    <script src="scripts/dropdown.js"></script>
+    <script src="scripts/dialog.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/file_explorer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

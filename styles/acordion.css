@@ -1,0 +1,49 @@
+/* Style the main container of the accordion */
+.accordion {
+    border: 1px solid var(--gray-2); /* Cambiado de #ddd a var(--gray-2) */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--bg);     /* Cambiado de #f9f9f9 a var(--bg) */
+    transition: all 0.3s ease;
+}
+
+/* Style the summary (the clickable header) */
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    list-style: none; /* Removes the default arrow in some browsers */
+}
+
+/* Hide the default triangle icon in Chrome/Safari and replace with a custom feel */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Add a hover effect to the summary */
+summary:hover {
+    color: var(--primary);           /* Cambiado de #007bff a var(--primary) */
+    background-color: var(--bg);    /* En lugar del azul claro, usamos el fondo base */
+}
+
+/* Style the content revealed inside */
+.content {
+    padding: 15px;
+    border-top: 1px solid var(--gray-2); /* Cambiado de #ddd a var(--gray-2) */
+    line-height: 1.6;
+    color: var(--text);              /* Cambiado de #444 a var(--text) */
+    margin-top: 5px;
+}
+
+/* Optional: Highlight the summary when the details are open */
+details[open] .accordion {
+    border-color: var(--primary);   /* Cambiado de #007bff a var(--primary) */
+    background-color: var(--bg);     /* Cambiado de #fff a var(--bg) */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+details[open] summary {
+    color: var(--primary);           /* Cambiado de #007bff a var(--primary) */
+}

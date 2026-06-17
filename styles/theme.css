@@ -1,0 +1,63 @@
+/* 1. Define all raw colors */
+:root {
+    /* Light Palette */
+    --bg-light: #ffffff;
+    --text-light: #0f172a;
+    --text-muted-light: #64748b;
+    --primary-light: #76a7f6;
+    --secondary-light: #94a3b8;
+
+    /* Dark Palette */
+    --bg-dark: #0f172a;
+    --text-dark: #f8fafc;
+    --text-muted-dark: #94a3b8;
+    --primary-dark: #2d85f1;
+    --secondary-dark: #94a3b8;
+
+    /* 2. Default Mapping (Default is Light) */
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --text-muted: var(--text-muted-light);
+    --primary: var(--primary-light);
+    --secondary: var(--secondary-light);
+    --gray-1: #777;
+    --gray-2: #555;
+    --gray-3: #333;
+}
+
+/* 3. The "Dark Mode" logic */
+/* This block applies if the system is dark OR if the user clicked your toggle button.
+   By sharing the variables here, we ensure it works regardless of how the state was triggered. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-manual="true"]) { /* This logic prevents "doubling" if you use a specific JS approach */
+        --bg: var(--bg-dark);
+        --text: var(--text-dark);
+        --text-muted: var(--text-muted-dark);
+        --primary: var(--primary-dark);
+        --secondary: var(--secondary-dark);
+    }
+}
+
+/* This is the manual override. Because it shares the exact same variables 
+   as the media query above, it doesn't matter which "mode" triggered the dark theme; 
+   the colors will remain consistent. */
+body.dark-mode {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --text-muted: var(--text-muted-dark);
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+}
+
+/* --- Apply to elements as usual --- */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+\n
+
+.btn-primary {
+    background-color: var(--primary);
+}

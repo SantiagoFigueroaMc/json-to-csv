@@ -1,0 +1,46 @@
+.timeline-item {
+    padding: 15px;
+    border-top: 1px solid var(--gray-1);
+    border-right: 1px solid var(--gray-1);
+    border-bottom: 1px solid var(--gray-1);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 12px 12px 0;;
+    background: var(--bg);
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.timeline-card {
+    padding: 15px;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.timeline-time {
+    font-size: 0.85rem;
+    color: var(--text-muted);             /* Cambiado de #666 a var(--text-muted) */
+    margin-right: 10px;
+}
+
+.timeline-title {
+    font-weight: bold;
+    color: var(--text);                   /* Asegura que el título use el color principal de texto */
+}
+
+.timeline-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.copy-dropdown {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-2);     /* Usando tu nueva escala de grises para el borde */
+}
