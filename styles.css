@@ -116,3 +116,18 @@ th {
 pre {
     background-color: var(--bg);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--bg);
+    box-shadow: 0 -10px 15px -5px var(--bg);
+}
+
+.app-version {
+    font-size: smaller;
+}
