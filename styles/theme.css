@@ -35,6 +35,9 @@
         --text-muted: var(--text-muted-dark);
         --primary: var(--primary-dark);
         --secondary: var(--secondary-dark);
+        --gray-1: #999;
+        --gray-2: #777;
+        --gray-3: #555;
     }
 }
 
@@ -54,10 +57,4 @@ body {
     background-color: var(--bg);
     color: var(--text);
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-\n
-
-.btn-primary {
-    background-color: var(--primary);
 }

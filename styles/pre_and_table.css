@@ -1,11 +1,9 @@
-
 pre {
     background: var(--bg);
     padding: 12px;
     border-radius: 6px;
     overflow-x: auto;
-    border: 1px solid;
-    border-color: var(--gray-1);
+    border: 1px solid var(--gray-1);
     margin: 0;
 }
 

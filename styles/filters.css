@@ -37,8 +37,7 @@
     margin-bottom: 12px;
     padding: 8px 10px;
     border-radius: 6px;
-    border: 1px solid;
-    border-color: var(--gray-1);
+    border: 1px solid var(--gray-1);
 }
 
 .drop-zone {
@@ -74,18 +73,15 @@
 .filter-chip button {
     background: transparent;
     border: none;
-    color: var(--text);
     cursor: pointer;
     padding: 0;
     font-size: 14px;
-    line-height: 1;
 }
 
 .filter-select-wrapper {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--bg); /* Cambiado de #f4f4f4 a var(--bg) */
     border-radius: 8px;
     padding: 8px;
 }

@@ -11,7 +11,7 @@ function createDropdown({label, items}) {
     // 2. Create the Trigger Button
     const trigger = document.createElement('button');
     trigger.className = 'dropdown-trigger';
-    trigger.innerHTML = `${label||"Actions"} <i class="arrow"></i>`;
+    trigger.innerHTML = `${label||"Actions"}`;
     container.appendChild(trigger);
 
     // 3. Create the Menu List
