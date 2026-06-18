@@ -6,7 +6,6 @@ var files = [];
 var filter_value = "";
 
 var get_filtered_files = () => {
-    // COMPLETED: Filters files by matching name substring (case-insensitive)
     if (!filter_value.trim()) return files;
     return files.filter(file => 
         file.name.toLowerCase().includes(filter_value.toLowerCase())
@@ -14,7 +13,6 @@ var get_filtered_files = () => {
 }
 
 function renderFiles() {
-    // COMPLETED: Clear explorer and render list items with click handlers
     file_explorer.innerHTML = "";
     const filteredFiles = get_filtered_files();
 
@@ -35,10 +33,15 @@ function renderFiles() {
         // File name text container
         const nameSpan = document.createElement("span");
         nameSpan.className = "file-name";
-        nameSpan.textContent = file.name;
+        nameSpan.textContent = `${file.name}`;
         nameSpan.title = file.name;
         nameSpan.addEventListener("click", onFileClick);
         li.appendChild(nameSpan);
+
+        const fileSizeSpan = document.createElement("span");
+        fileSizeSpan.className = "file-size";
+        fileSizeSpan.textContent = `(${humanReadableFileSize(file)})`;
+        li.appendChild(fileSizeSpan);
 
         // Delete action item button
         const deleteBtn = document.createElement("button");
@@ -66,9 +69,6 @@ async function getFileCache() {
   return await bucket.caches.open('json-files');
 }
 
-/**
- * Retrieves all saved JSON files from the storage bucket.
- */
 /**
  * Retrieves all saved JSON files from the storage bucket.
  */
@@ -164,7 +164,6 @@ function loadFileToMainWindow(file) {
     reader.readAsText(file);
 }
 
-// Extracted processing pattern to safely share logic between files and uploads
 function processJsonPayload(rawJson) {
     let rawData = rawJson;
     if (!Array.isArray(rawData)) {
@@ -191,7 +190,6 @@ function processJsonPayload(rawJson) {
     renderTimeline();
 }
 
-// COMPLETED Listeners
 function onFileClick(event) {
     const filename = event.target.closest('li').dataset.filename;
     const fileTarget = files.find(f => f.name === filename);

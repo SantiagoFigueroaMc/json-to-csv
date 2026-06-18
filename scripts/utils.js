@@ -101,3 +101,25 @@ function createTable(event) {
 
     return table;
 }
+
+/**
+ * @param {name:string,data:Object} file The file
+ * @returns {string} Text with the file size with one decimal and the letters
+ */
+function humanReadableFileSize(file) {
+    if (!file || !file.data) {
+        return "0 B";
+    }
+
+    let bytes = new Blob([JSON.stringify(file.data)]).size;
+
+    const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+    let unitIndex = 0;
+
+    while (bytes >= 1024 && unitIndex < units.length - 1) {
+        bytes /= 1024;
+        unitIndex++;
+    }
+
+    return `${unitIndex === 0 ? bytes : bytes.toFixed(1)} ${units[unitIndex]}`;
+}
