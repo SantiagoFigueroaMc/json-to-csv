@@ -24,12 +24,12 @@
     left: 0;
     z-index: 3;
     min-width: 160px;
-    padding: 8px 0;
     margin-top: 5px;
     background-color: var(--bg);
-    border: 1px solid var(--gray-1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     list-style: none;
+    overflow: hidden;
     display: none;
 }
 
@@ -42,10 +42,12 @@
     width: 100%;
     padding: 10px 16px;
     border: none;
+    border-radius: 0;
     text-align: left;
     font-size: 14px;
     cursor: pointer;
     color: var(--text);
+    background: var(--bg);
 }
 
 
@@ -54,6 +56,6 @@
 }
 
 .dropdown-item:hover {
-    background-color: var(--bg);
+    background-color: var(--primary);
     filter: brightness(0.95);
 }

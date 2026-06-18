@@ -186,7 +186,6 @@ function processJsonPayload(rawJson) {
     
     eventsData = parsedData;
     buildFilters(eventsData);
-    renderEvents();
     renderTimeline();
 }
 

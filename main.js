@@ -244,11 +244,6 @@ function renderUsedFilters() {
 
                 select.appendChild(option);
             });
-
-        select.addEventListener(
-            'change',
-            renderEvents
-        );
         
         select.addEventListener(
             'change',
@@ -276,7 +271,6 @@ function renderUsedFilters() {
                     );
                 renderAvailableFilters();
                 renderUsedFilters();
-                renderEvents();
                 renderTimeline();
             }
         );
@@ -323,14 +317,8 @@ usedFiltersContainer.addEventListener(
         activeFilters.push(key);
         renderAvailableFilters();
         renderUsedFilters();
-        renderEvents();
         renderTimeline();
     }
-);
-
-viewSwitch.addEventListener(
-    'change',
-    renderEvents
 );
 
 viewSwitch.addEventListener(
