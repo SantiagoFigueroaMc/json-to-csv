@@ -12,9 +12,7 @@
 }
 
 .filters-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
     width: 100%;
     height: auto;
 }
@@ -25,7 +23,7 @@
     border-color: var(--gray-1);
     border-radius: 8px;
     padding: 16px;
-    min-width: 280px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,6 +52,11 @@
     align-content: flex-start;
 }
 
+.drop-zone.available-zone {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
 .filter-chip {
     background: var(--primary); /* Cambiado de #1976d2 a var(--primary) */
     color: var(--text);
@@ -61,9 +64,9 @@
     border-radius: 16px;
     cursor: grab;
     user-select: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .filter-chip.dragging {

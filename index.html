@@ -21,12 +21,27 @@
 <body>
 
     <aside>
-        <input type="file" accept=".json" id="upload-file">
+        <details class="aside-details">
+            <summary>
+                Filtros
+            </summary>
+            <div class="filters-box">
+                    <h3>Available Filters</h3>
 
-        <input type="search" id="search-files" placeholder="Buscar archivo...">
-        <ul class="file-explorer">
-        </ul>
+                    <input type="search" id="filters-search" placeholder="Buscar filtro...">
 
+                    <div id="availableFilters" class="drop-zone available-zone">
+                        <!-- draggable keys -->
+                    </div>
+                </div>
+        </details>
+        <details class="aside-details">
+            <summary>Archivos</summary>
+            <input type="file" accept=".json" id="upload-file">
+            <input type="search" id="search-files" placeholder="Buscar archivo...">
+            <ul class="file-explorer">
+            </ul>
+        </details>
     </aside>
     <main>
         <header>
@@ -40,16 +55,6 @@
             <!-- FILTERS UI -->
 
             <div class="filters-layout">
-
-                <div class="filters-box">
-                    <h3>Available Filters</h3>
-
-                    <input type="search" id="filters-search" placeholder="Buscar filtro...">
-
-                    <div id="availableFilters" class="drop-zone available-zone">
-                        <!-- draggable keys -->
-                    </div>
-                </div>
 
                 <div class="filters-box">
                     <h3>Used Filters</h3>

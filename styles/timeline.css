@@ -29,7 +29,7 @@
 }
 
 .timeline-title {
-    font-weight: bold;
+    display: block;
     color: var(--text);                   /* Asegura que el título use el color principal de texto */
 }
 
