@@ -1,6 +1,7 @@
 
 const eventsContainer = document.querySelector('#events');
 const timelineContainer = document.querySelector('#timeline');
+const visitDashboardContainer = document.querySelector('#visit-dashboard');
 const viewSwitch = document.querySelector('#viewSwitch');
 
 const rawFileInput = document.querySelector('#rawFileInput');
@@ -249,6 +250,11 @@ function renderUsedFilters() {
             'change',
             renderTimeline
         );
+        
+        select.addEventListener(
+            'change',
+            renderVisitDashboard
+        );
 
         const removeBtn =
             document.createElement('button');
@@ -272,6 +278,7 @@ function renderUsedFilters() {
                 renderAvailableFilters();
                 renderUsedFilters();
                 renderTimeline();
+                renderVisitDashboard();
             }
         );
 
@@ -318,10 +325,15 @@ usedFiltersContainer.addEventListener(
         renderAvailableFilters();
         renderUsedFilters();
         renderTimeline();
+        renderVisitDashboard();
     }
 );
 
 viewSwitch.addEventListener(
     'change',
     renderTimeline
+);
+viewSwitch.addEventListener(
+    'change',
+    renderVisitDashboard
 );

@@ -148,6 +148,8 @@ function loadFileToMainWindow(file) {
     // FIX: If the argument is an app-state storage file record, bypass FileReader completely
     if (!(file instanceof File) && file.data) {
         processJsonPayload(file.data);
+            renderTimeline();
+            renderVisitDashboard();
         return;
     }
 
@@ -156,6 +158,8 @@ function loadFileToMainWindow(file) {
         try {
             const rawJson = JSON.parse(event.target.result);
             processJsonPayload(rawJson);
+            renderTimeline();
+            renderVisitDashboard();
         } catch (error) {
             console.error(error);
             alert('Invalid JSON file');
@@ -186,7 +190,6 @@ function processJsonPayload(rawJson) {
     
     eventsData = parsedData;
     buildFilters(eventsData);
-    renderTimeline();
 }
 
 function onFileClick(event) {

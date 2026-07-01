@@ -1,0 +1,9 @@
+#visit-dashboard {
+    width: 100%;
+    overflow: auto;
+}
+
+#visit-dashboard .data {
+    display: flex;
+    flex-direction: column;
+}
